@@ -1,0 +1,23 @@
+body{
+ background-size:cover;
+    background-image:url("music-background-design_1314-135.jpg");
+}
+
+
+
+
+#coocoo{
+    bottom:0;
+   position: fixed;
+   width:100%;
+   background-color: aliceblue;
+}
+
+ canvas{
+     margin-top:50px;
+     border-width:20;
+     border-color:aquamarine;
+     background-color:aqua;
+     border-radius:70px;
+ }
+
