@@ -16,7 +16,13 @@ function setup(){
     canvas.center();
     video=createCapture(VIDEO);
     video.hide();
+    poseNet = ml5.poseNet(video, modelLoaded);
+
+    poseNet.on('pose', gotPoses);
 }
+    
+
+
 
 function draw(){
  image(video, 0,0, 300, 300);
@@ -32,16 +38,10 @@ function gotPoses(results){
     if(results.length > 0){
 console.log(results);
 
-if(pose.poseNet()==leftWrist){
+scoreleftWristY = results[0].pose.keypoints[9].score
+scorerightWristY = results[0].pose.keypoints[10].score
+console.log("scoreleftWristY =" + scoreleftWristY);
 
-    left_wristX = results[0].pose.leftWrist.x;
-    left_wristY = results[0].pose.leftWrist.y;
-
-}
-
-if(pose.poseNet){
-    
-}
 left_wristX = results[0].pose.leftWrist.x;
 left_wristY = results[0].pose.leftWrist.y;
 
